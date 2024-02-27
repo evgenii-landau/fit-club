@@ -13,17 +13,21 @@ export const Header = () => {
 		<div className="header">
 			<img className='logo' src={Logo} alt="Logo"/>
 			{(menuOpened === false && mobile === true) ? (
-				<div style={{backgroundColor: 'var(--appColor)', padding: '0.5rem', borderRadius: '5px'}}
-						 onClick={() => setMenuOpened(true)}>
+				<div style={{
+					backgroundColor: 'var(--appColor)',
+					padding: '0.5rem',
+					borderRadius: '5px'
+				}} onClick={() => setMenuOpened(true)}>
 					<img src={Bars} alt="Mobile bar" style={{width: '1.5rem', height: '1.5rem'}}/>
 				</div>
 			) : (
 				<ul className='header-menu'>
-					<li><Link onClick={() => setMenuOpened(false)} to='home' span={true} smooth={true} activeClass='active'>Home</Link></li>
-					<li><Link onClick={() => setMenuOpened(false)} to='programs' span={true} smooth={true}>Programs</Link></li>
-					<li><Link onClick={() => setMenuOpened(false)} to='reasons' span={true} smooth={true}>Why us</Link></li>
-					<li><Link onClick={() => setMenuOpened(false)} to='plans' span={true} smooth={true}>Plans</Link></li>
-					<li><Link onClick={() => setMenuOpened(false)} to='testimonials' span={true} smooth={true}>Testimonials</Link>
+					<li><Link onClick={() => setMenuOpened(false)} to='home' spy={true} smooth={true}
+										activeClass='active'>Home</Link></li>
+					<li><Link onClick={() => setMenuOpened(false)} to='programs' spy={true} smooth={true}>Programs</Link></li>
+					<li><Link onClick={() => setMenuOpened(false)} to='reasons' spy={true} smooth={true}>Why us</Link></li>
+					<li><Link onClick={() => setMenuOpened(false)} to='plans' spy={true} smooth={true}>Plans</Link></li>
+					<li><Link onClick={() => setMenuOpened(false)} to='testimonials' spy={true} smooth={true}>Testimonials</Link>
 					</li>
 				</ul>
 			)}
