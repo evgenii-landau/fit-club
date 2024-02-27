@@ -13,7 +13,7 @@ export const Testimonials = () => {
 
 
 	return (
-		<div className="Testimonials">
+		<div className="testimonials">
 			<div className='left-t'>
 				<span>Testimonials</span>
 				<span className='stroke-text'>What they</span>
@@ -21,7 +21,7 @@ export const Testimonials = () => {
 				<motion.span
 					key={selected}
 					initial={{opacity: 0, x: -100}}
-					animate={{opacity: 1, x: 100}}
+					animate={{opacity: 1, x: 0}}
 					exit={{opacity: 0, x: 100}}
 					transition={transition}
 				>{testimonialsData[selected].review}</motion.span>
@@ -54,11 +54,10 @@ export const Testimonials = () => {
 				<div className='arrows'>
 					<img onClick={() => {
 						selected === 0 ? setSelected(tLength - 1) : setSelected((prev) => prev - 1)
-					}} src={leftArrow} alt="left arrow"/>
+					}} src={rightArrow} alt="left arrow"/>
 					<img onClick={() => {
 						selected === tLength - 1 ? setSelected(0) : setSelected((prev) => prev + 1)
 					}}
-
 						src={rightArrow} alt="right arrow"/>
 				</div>
 			</div>
